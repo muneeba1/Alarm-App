@@ -44,8 +44,15 @@ class AlarmModel: NSObject {
         self.label = label
         self.onSnooze = onSnooze
     }
-    
-    
+}
+extension AlarmModel {
+    var formattedTime: String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "h:mm a"
+        return dateFormatter.string(from: self.date)
+    }
+}
+
 /*
     init(_ dict: PropertyReflectable.RepresentationType){
         date = dict["date"] as! Date
@@ -59,4 +66,4 @@ class AlarmModel: NSObject {
         onSnooze = dict["onSnooze"] as! Bool
     }
 */
-}
+
