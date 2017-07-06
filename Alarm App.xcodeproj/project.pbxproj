@@ -70,12 +70,12 @@
 		FAE262201F0D3F3300CE3551 /* Alarm App */ = {
 			isa = PBXGroup;
 			children = (
-				FAE262471F0D732300CE3551 /* Models */,
 				FAE262211F0D3F3300CE3551 /* AppDelegate.swift */,
 				FAE262281F0D3F3300CE3551 /* Assets.xcassets */,
 				FAE262371F0D483A00CE3551 /* Controllers */,
 				FAE262431F0D709300CE3551 /* Storyboards */,
 				FAE2623E1F0D4A5A00CE3551 /* Views */,
+				FAE262471F0D732300CE3551 /* Models */,
 				FAE262441F0D70AF00CE3551 /* Supporting */,
 				FAE2624A1F0D79A600CE3551 /* Service */,
 			);
