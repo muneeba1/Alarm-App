@@ -132,23 +132,248 @@
             </objects>
             <point key="canvasLocation" x="972" y="37.331334332833585"/>
         </scene>
-        <!--Edit Alarm View Controller-->
-        <scene sceneID="o6f-7v-lTs">
+        <!--Settings View Controller-->
+        <scene sceneID="dE0-xS-YCv">
             <objects>
-                <viewController id="lrW-CX-Buq" customClass="EditAlarmViewController" customModule="Alarm_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="h2a-L8-v8B" customClass="SettingsViewController" customModule="Alarm_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="3id-9H-k3w"/>
-                        <viewControllerLayoutGuide type="bottom" id="xiQ-ZP-t6b"/>
+                        <viewControllerLayoutGuide type="top" id="tPG-8N-TUg"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ayk-bT-L8U"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="XWL-NL-tMW">
+                    <view key="view" contentMode="scaleToFill" id="8Dy-7d-haM">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IQF-ai-jxD">
+                                <rect key="frame" x="91" y="20" width="193" height="45"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W11-Wb-aCV">
+                                <rect key="frame" x="128" y="116" width="118" height="35"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                <state key="normal" title="Calendar &gt;"/>
+                                <connections>
+                                    <segue destination="mOH-E9-3sq" kind="show" identifier="displayCalendar" id="fkI-g7-VfK"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zqt-Nw-PPH">
+                                <rect key="frame" x="109" y="241" width="157" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="DZ2-F7-566"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                <state key="normal" title="Smart Snooze &gt;"/>
+                                <connections>
+                                    <segue destination="lsA-H0-GYF" kind="show" identifier="displaySnooze" id="g80-1v-RZd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8W-Om-1Nm">
+                                <rect key="frame" x="109" y="177" width="157" height="35"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                <state key="normal" title="Announce Time &gt;"/>
+                                <connections>
+                                    <segue destination="vu6-77-LI7" kind="show" identifier="displayAnnounceTime" id="bVM-y9-imJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Y8W-Om-1Nm" firstAttribute="leading" secondItem="8Dy-7d-haM" secondAttribute="leadingMargin" constant="93" id="03x-J3-lSx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="IQF-ai-jxD" secondAttribute="trailing" constant="75" id="1dx-KY-cRu"/>
+                            <constraint firstItem="Zqt-Nw-PPH" firstAttribute="trailing" secondItem="Y8W-Om-1Nm" secondAttribute="trailing" id="Noc-zn-lY7"/>
+                            <constraint firstItem="W11-Wb-aCV" firstAttribute="top" secondItem="IQF-ai-jxD" secondAttribute="bottom" constant="51" id="OYf-mo-cV9"/>
+                            <constraint firstItem="IQF-ai-jxD" firstAttribute="leading" secondItem="8Dy-7d-haM" secondAttribute="leadingMargin" constant="75" id="XbS-bc-akH"/>
+                            <constraint firstItem="Zqt-Nw-PPH" firstAttribute="top" secondItem="Y8W-Om-1Nm" secondAttribute="bottom" constant="29" id="aAS-cW-GRv"/>
+                            <constraint firstItem="W11-Wb-aCV" firstAttribute="leading" secondItem="8Dy-7d-haM" secondAttribute="leadingMargin" constant="112" id="eLa-u8-Snn"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Y8W-Om-1Nm" secondAttribute="trailing" constant="93" id="isf-Ll-jYP"/>
+                            <constraint firstItem="Zqt-Nw-PPH" firstAttribute="leading" secondItem="Y8W-Om-1Nm" secondAttribute="leading" id="mRS-2j-mPC"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="W11-Wb-aCV" secondAttribute="trailing" constant="113" id="ttK-5u-s7z"/>
+                            <constraint firstItem="Y8W-Om-1Nm" firstAttribute="top" secondItem="W11-Wb-aCV" secondAttribute="bottom" constant="26" id="xpG-HJ-7IV"/>
+                            <constraint firstItem="IQF-ai-jxD" firstAttribute="top" secondItem="tPG-8N-TUg" secondAttribute="bottom" id="zc5-Om-5X7"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="zGJ-2U-thb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zzq-DC-36x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1720.8" y="36.431784107946029"/>
+            <point key="canvasLocation" x="1804" y="37"/>
+        </scene>
+        <!--Calendar View Controller-->
+        <scene sceneID="DFr-hj-wm4">
+            <objects>
+                <viewController id="mOH-E9-3sq" customClass="CalendarViewController" customModule="Alarm_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ss9-QG-9PF"/>
+                        <viewControllerLayoutGuide type="bottom" id="Nc1-Se-MPP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LIr-pC-daE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calendar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfx-dg-zQL">
+                                <rect key="frame" x="102" y="32" width="172" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="CbF-r6-QeB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the days to turn your alarm off:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVn-VJ-ISX">
+                                <rect key="frame" x="16" y="45" width="343" height="186"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Nc1-Se-MPP" firstAttribute="top" secondItem="jVn-VJ-ISX" secondAttribute="bottom" constant="436" id="Emm-bd-8f6"/>
+                            <constraint firstItem="jVn-VJ-ISX" firstAttribute="leading" secondItem="LIr-pC-daE" secondAttribute="leadingMargin" id="HXd-Vy-8AU"/>
+                            <constraint firstItem="jVn-VJ-ISX" firstAttribute="trailing" secondItem="LIr-pC-daE" secondAttribute="trailingMargin" id="PZz-Bl-dtE"/>
+                            <constraint firstItem="jVn-VJ-ISX" firstAttribute="centerX" secondItem="Xfx-dg-zQL" secondAttribute="centerX" id="XDW-ME-q3l"/>
+                            <constraint firstItem="jVn-VJ-ISX" firstAttribute="top" secondItem="ss9-QG-9PF" secondAttribute="bottom" constant="25" id="nRN-rt-sAF"/>
+                            <constraint firstItem="Xfx-dg-zQL" firstAttribute="top" secondItem="ss9-QG-9PF" secondAttribute="bottom" constant="12" id="x6y-Wl-zBm"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M8f-YL-3A3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2612" y="37"/>
+        </scene>
+        <!--Smart Snooze View Controller-->
+        <scene sceneID="HJP-43-fca">
+            <objects>
+                <viewController id="lsA-H0-GYF" customClass="SmartSnoozeViewController" customModule="Alarm_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nUw-1J-7Ca"/>
+                        <viewControllerLayoutGuide type="bottom" id="4B6-fO-SAh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="C3I-XG-fTT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smart Snooze" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jIL-gF-Yre">
+                                <rect key="frame" x="54" y="28" width="278" height="45"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Standard Duration:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Slc-rX-B5b">
+                                <rect key="frame" x="29" y="137" width="218" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="218" id="hfu-Q4-yZO"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Louder per snooze:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Opb-A4-k2I">
+                                <rect key="frame" x="29" y="211" width="245" height="28"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hC0-w4-Cik">
+                                <rect key="frame" x="283" y="211" width="51" height="31"/>
+                            </switch>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Make the alarm sound louder per snooze." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="z8E-kl-mzA">
+                                <rect key="frame" x="18" y="247" width="240" height="62"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Slc-rX-B5b" firstAttribute="top" secondItem="jIL-gF-Yre" secondAttribute="bottom" constant="64" id="9eO-Bl-Np5"/>
+                            <constraint firstItem="hC0-w4-Cik" firstAttribute="trailing" secondItem="jIL-gF-Yre" secondAttribute="trailing" id="Ex1-DN-fYm"/>
+                            <constraint firstItem="Slc-rX-B5b" firstAttribute="leading" secondItem="C3I-XG-fTT" secondAttribute="leadingMargin" constant="13" id="J0C-1s-r8r"/>
+                            <constraint firstItem="hC0-w4-Cik" firstAttribute="leading" secondItem="Opb-A4-k2I" secondAttribute="trailing" constant="9" id="JKZ-9e-pdG"/>
+                            <constraint firstItem="z8E-kl-mzA" firstAttribute="leading" secondItem="C3I-XG-fTT" secondAttribute="leadingMargin" constant="2" id="MUM-PS-GPc"/>
+                            <constraint firstItem="hC0-w4-Cik" firstAttribute="top" secondItem="Opb-A4-k2I" secondAttribute="top" id="NwI-JD-8Zw"/>
+                            <constraint firstItem="jIL-gF-Yre" firstAttribute="top" secondItem="nUw-1J-7Ca" secondAttribute="bottom" constant="8" id="ShC-bd-xer"/>
+                            <constraint firstItem="Opb-A4-k2I" firstAttribute="leading" secondItem="Slc-rX-B5b" secondAttribute="leading" id="YqR-KV-nVf"/>
+                            <constraint firstItem="Slc-rX-B5b" firstAttribute="centerX" secondItem="z8E-kl-mzA" secondAttribute="centerX" id="dw5-04-r3E"/>
+                            <constraint firstItem="z8E-kl-mzA" firstAttribute="top" secondItem="Opb-A4-k2I" secondAttribute="bottom" constant="8" symbolic="YES" id="etk-5i-Zof"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="jIL-gF-Yre" secondAttribute="trailing" constant="27" id="jVc-AT-toq"/>
+                            <constraint firstItem="Opb-A4-k2I" firstAttribute="top" secondItem="Slc-rX-B5b" secondAttribute="bottom" constant="46" id="oeQ-Cu-BSG"/>
+                            <constraint firstItem="jIL-gF-Yre" firstAttribute="leading" secondItem="C3I-XG-fTT" secondAttribute="leadingMargin" constant="38" id="tRq-67-ThE"/>
+                            <constraint firstItem="4B6-fO-SAh" firstAttribute="top" secondItem="z8E-kl-mzA" secondAttribute="bottom" constant="358" id="wE9-xG-FoN"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="z8E-kl-mzA" secondAttribute="trailing" constant="101" id="xEz-iP-eff"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SBe-bH-xLi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3426" y="37"/>
+        </scene>
+        <!--Announce Time View Controller-->
+        <scene sceneID="laY-om-Eey">
+            <objects>
+                <viewController id="vu6-77-LI7" customClass="AnnounceTimeViewController" customModule="Alarm_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="1e4-9D-G1j"/>
+                        <viewControllerLayoutGuide type="bottom" id="JwF-cZ-kwV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6tf-Q0-6Fw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Announce Time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veJ-WT-VSQ">
+                                <rect key="frame" x="37" y="28" width="300" height="45"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oI4-E6-fyb">
+                                <rect key="frame" x="37" y="112" width="218" height="52"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="52" id="Iiy-kR-TK8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voice:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydA-qR-xJX">
+                                <rect key="frame" x="37" y="188" width="218" height="28"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="218" id="k7c-Cq-vpD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="On/Off:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RLL-8p-V7r">
+                                <rect key="frame" x="37" y="254" width="218" height="28"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ch3-Rl-tWj">
+                                <rect key="frame" x="263" y="254" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RLL-8p-V7r" firstAttribute="trailing" secondItem="ydA-qR-xJX" secondAttribute="trailing" id="AkO-fc-pde"/>
+                            <constraint firstItem="oI4-E6-fyb" firstAttribute="leading" secondItem="6tf-Q0-6Fw" secondAttribute="leadingMargin" constant="21" id="DgO-Go-Dvp"/>
+                            <constraint firstItem="RLL-8p-V7r" firstAttribute="leading" secondItem="ydA-qR-xJX" secondAttribute="leading" id="E5g-c8-aak"/>
+                            <constraint firstItem="ydA-qR-xJX" firstAttribute="top" secondItem="oI4-E6-fyb" secondAttribute="bottom" constant="24" id="MTM-uv-lgs"/>
+                            <constraint firstItem="oI4-E6-fyb" firstAttribute="top" secondItem="veJ-WT-VSQ" secondAttribute="bottom" constant="39" id="PXb-Cd-WGB"/>
+                            <constraint firstItem="RLL-8p-V7r" firstAttribute="top" secondItem="ydA-qR-xJX" secondAttribute="bottom" constant="38" id="SBY-Nn-JLX"/>
+                            <constraint firstItem="oI4-E6-fyb" firstAttribute="top" secondItem="6tf-Q0-6Fw" secondAttribute="top" constant="112" id="TmP-5g-N0q"/>
+                            <constraint firstItem="oI4-E6-fyb" firstAttribute="leading" secondItem="veJ-WT-VSQ" secondAttribute="leading" id="dhF-PS-Om5"/>
+                            <constraint firstItem="ydA-qR-xJX" firstAttribute="leading" secondItem="oI4-E6-fyb" secondAttribute="leading" id="he9-j5-Bhw"/>
+                            <constraint firstItem="ydA-qR-xJX" firstAttribute="trailing" secondItem="oI4-E6-fyb" secondAttribute="trailing" id="qut-yY-9Wq"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hFk-3J-aRf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4204" y="37"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="2eS-zU-Tln">

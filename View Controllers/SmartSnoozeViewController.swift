@@ -1,5 +1,5 @@
 //
-//  EditAlarmViewController.swift
+//  SmartSnoozeViewController.swift
 //  Alarm App
 //
 //  Created by Muneeba Khatoon on 7/5/17.
