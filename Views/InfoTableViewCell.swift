@@ -8,8 +8,11 @@
 
 import UIKit
 
-class InfoTableViewCell: UITableViewCell {
+class InfoTableViewCell: UITableViewCell
+{
 
+    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var label: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
