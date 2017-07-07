@@ -13,7 +13,7 @@
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Alarm_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -125,7 +125,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="suf-jl-7hJ"/>
                     <connections>
-                        <outlet property="tableView" destination="T7z-nO-hmf" id="z0i-yL-zPJ"/>
+                        <outlet property="homeTableView" destination="T7z-nO-hmf" id="BLt-EI-22u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

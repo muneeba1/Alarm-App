@@ -169,7 +169,7 @@
 				TargetAttributes = {
 					FAE2621D1F0D3F3300CE3551 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = B8LC78N529;
+						DevelopmentTeam = ESE5F95GWA;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -342,7 +342,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = B8LC78N529;
+				DEVELOPMENT_TEAM = ESE5F95GWA;
 				INFOPLIST_FILE = "Alarm App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.makeschool.Alarm-App";
@@ -355,7 +355,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = B8LC78N529;
+				DEVELOPMENT_TEAM = ESE5F95GWA;
 				INFOPLIST_FILE = "Alarm App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.makeschool.Alarm-App";
