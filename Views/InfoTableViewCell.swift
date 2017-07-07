@@ -10,7 +10,6 @@ import UIKit
 
 class InfoTableViewCell: UITableViewCell
 {
-
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var label: UILabel!
     override func awakeFromNib() {
@@ -23,5 +22,4 @@ class InfoTableViewCell: UITableViewCell
 
         // Configure the view for the selected state
     }
-
 }

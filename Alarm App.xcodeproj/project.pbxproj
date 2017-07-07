@@ -25,6 +25,7 @@
 		FAE262541F0DC19A00CE3551 /* SmartSnoozeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE262531F0DC19A00CE3551 /* SmartSnoozeViewController.swift */; };
 		FAE262A21F0FDB4700CE3551 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE262A11F0FDB4700CE3551 /* AdSupport.framework */; };
 		FAE262A61F0FF15800CE3551 /* EventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE262A51F0FF15800CE3551 /* EventsModel.swift */; };
+		FAE262AA1F10228A00CE3551 /* SpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE262A91F10228A00CE3551 /* SpeechService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +50,7 @@
 		FAE262531F0DC19A00CE3551 /* SmartSnoozeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SmartSnoozeViewController.swift; path = "View Controllers/SmartSnoozeViewController.swift"; sourceTree = "<group>"; };
 		FAE262A11F0FDB4700CE3551 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		FAE262A51F0FF15800CE3551 /* EventsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsModel.swift; path = Models/EventsModel.swift; sourceTree = SOURCE_ROOT; };
+		FAE262A91F10228A00CE3551 /* SpeechService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeechService.swift; path = Service/SpeechService.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				FAE262481F0D79A000CE3551 /* AlarmService.swift */,
+				FAE262A91F10228A00CE3551 /* SpeechService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				FAE2624E1F0DBD5800CE3551 /* CalendarViewController.swift in Sources */,
 				FAE262461F0D731E00CE3551 /* AlarmModel.swift in Sources */,
 				FAE2624C1F0DBB9D00CE3551 /* SettingsViewController.swift in Sources */,
+				FAE262AA1F10228A00CE3551 /* SpeechService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

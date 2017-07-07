@@ -14,8 +14,9 @@ import UserNotifications
 class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate
 {
     @IBOutlet weak var tableView: UITableView!
+    let speechService = SpeechService()
     var eventsArray: [EventsModel] = []
-
+    
     // If modifying these scopes, delete your previously saved credentials by
     // resetting the iOS simulator or uninstall the app.
     private let scopes = [kGTLRAuthScopeCalendarReadonly]
@@ -56,9 +57,9 @@ class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
             else
             {
                 print("already authorized")
-                let date = Date().addingTimeInterval(TimeInterval(exactly: 60)!)
-                let alarm = AlarmModel(date: date, enabled: true, weekDay: .Thursday, label: "Testing 1")
-                self.scheduler.setupNotificationsForAlarm(alarm: alarm)
+                //let date = Date().addingTimeInterval(TimeInterval(exactly: 60)!)
+                //let alarm = AlarmModel(date: date, enabled: true, weekDay: .Thursday, label: "Testing 1")
+               // self.scheduler.setupNotificationsForAlarm(alarm: alarm)
             }
         }
         
@@ -69,6 +70,7 @@ class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
         let weekDay = cal.component(.weekday, from: Date())
         today = weekDay
     }
+    
     
     override func viewWillAppear(_ animated: Bool)
     {
@@ -130,6 +132,7 @@ class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
                 eventsArray.append(event)
             }
             tableView.reloadData()
+            speakEvents()
         } else {
             outputText = "No upcoming events found."
         }
@@ -151,6 +154,17 @@ class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
         )
         alert.addAction(ok)
         present(alert, animated: true, completion: nil)
+    }
+    
+    func speakEvents()
+    {
+        var stringToSpeak = "Good Morning. Today you have \(eventsArray.count) events. Here they are: "
+        for event in eventsArray
+        {
+            stringToSpeak += " \(event.eventSummary),  then  "
+        }
+        stringToSpeak += " you're free! "
+        speechService.speakString(text: stringToSpeak)
     }
 }
 
