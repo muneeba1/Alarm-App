@@ -11,11 +11,19 @@ import GoogleSignIn
 import UIKit
 import UserNotifications
 
-<<<<<<< HEAD
-class HomeViewController: UIViewController
+class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate
 {
+    @IBOutlet weak var tableView: UITableView!
+    var eventsArray: [EventsModel] = []
 
-    @IBOutlet weak var homeTableView: UITableView!
+    // If modifying these scopes, delete your previously saved credentials by
+    // resetting the iOS simulator or uninstall the app.
+    private let scopes = [kGTLRAuthScopeCalendarReadonly]
+    
+    private let service = GTLRCalendarService()
+    let signInButton = GIDSignInButton()
+    let output = UITextView()
+    
     let scheduler = AlarmService()
     var alarms: [AlarmModel] = []
     var today: Int = 0
@@ -24,7 +32,18 @@ class HomeViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-
+        
+        // Configure Google Sign-in.
+        GIDSignIn.sharedInstance().delegate = self
+        GIDSignIn.sharedInstance().uiDelegate = self
+        GIDSignIn.sharedInstance().scopes = scopes
+        GIDSignIn.sharedInstance().signIn()
+        //GIDSignIn.sharedInstance().signInSilently()
+        //GIDSignIn.sharedInstance().clientID = "<CLIENT_ID>"
+        
+        // Add the sign-in button.
+        view.addSubview(signInButton)
+        
         let notificationCenter = UNUserNotificationCenter.current()
         let options: UNAuthorizationOptions = [.alert, .sound]
         notificationCenter.getNotificationSettings { (settings) in
@@ -50,70 +69,12 @@ class HomeViewController: UIViewController
         let weekDay = cal.component(.weekday, from: Date())
         today = weekDay
     }
+    
     override func viewWillAppear(_ animated: Bool)
     {
         super.viewWillAppear(animated)
         alarms = AlarmModel.getAlarms()
         print("test")
-    }
-
-}
-
-
-extension HomeViewController: UITableViewDataSource, UITableViewDelegate
-{
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
-    {
-        if indexPath.section == 0
-        {
-            let alarmCell = tableView.dequeueReusableCell(withIdentifier: "alarmCell", for: indexPath) as! AlarmTableViewCell
-            return alarmCell
-        }
-        else
-        {
-            let infoCell = tableView.dequeueReusableCell(withIdentifier: "infoCell", for: indexPath) as! InfoTableViewCell
-            return infoCell
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
-        return 0
-=======
-class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
-    
-  
-    @IBOutlet weak var tableView: UITableView!
-    var eventsArray: [EventsModel] = []
-
-    // If modifying these scopes, delete your previously saved credentials by
-    // resetting the iOS simulator or uninstall the app.
-    private let scopes = [kGTLRAuthScopeCalendarReadonly]
-    
-    private let service = GTLRCalendarService()
-    let signInButton = GIDSignInButton()
-    let output = UITextView()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        // Configure Google Sign-in.
-        GIDSignIn.sharedInstance().delegate = self
-        GIDSignIn.sharedInstance().uiDelegate = self
-        GIDSignIn.sharedInstance().scopes = scopes
-        GIDSignIn.sharedInstance().signIn()
-        //GIDSignIn.sharedInstance().signInSilently()
-        //GIDSignIn.sharedInstance().clientID = "<CLIENT_ID>"
-        
-        // Add the sign-in button.
-        view.addSubview(signInButton)
-        
-        // Add a UITextView to display output.
-    }
-  
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
@@ -232,6 +193,5 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate
             cell.textView.text = event.eventSummary
             return cell
         }
->>>>>>> testingCals
     }
 }

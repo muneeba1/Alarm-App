@@ -129,7 +129,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="suf-jl-7hJ"/>
                     <connections>
-                        <outlet property="homeTableView" destination="T7z-nO-hmf" id="BLt-EI-22u"/>
+                        <outlet property="tableView" destination="T7z-nO-hmf" id="9XG-X6-80r"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
