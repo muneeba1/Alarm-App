@@ -14,6 +14,7 @@ class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
     
   
     @IBOutlet weak var tableView: UITableView!
+    var eventsArray: [EventsModel] = []
 
     // If modifying these scopes, delete your previously saved credentials by
     // resetting the iOS simulator or uninstall the app.
@@ -38,12 +39,6 @@ class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
         view.addSubview(signInButton)
         
         // Add a UITextView to display output.
-        output.frame = view.bounds
-        output.isEditable = false
-        output.contentInset = UIEdgeInsets(top: 150, left: 0, bottom: 20, right: 0)
-        output.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        output.isHidden = true
-        view.addSubview(output);
     }
   
     override func didReceiveMemoryWarning() {
@@ -90,14 +85,20 @@ class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
         
         var outputText = ""
         if let events = response.items, !events.isEmpty {
-            for event in events {
-                let start = event.start!.dateTime ?? event.start!.date!
-                let startString = DateFormatter.localizedString(
-                    from: start.date,
-                    dateStyle: .short,
-                    timeStyle: .short)
-                outputText += "\(startString) - \(event.summary!)\n"
+            let formatter = DateFormatter()
+            formatter.locale = Locale.current
+            formatter.setLocalizedDateFormatFromTemplate("yyyy-MM-ddTHH:mm:ss")
+            for gEvent in events {
+                //let startString = gEvent.start!.dateTime?.stringValue ?? gEvent.start!.date!.stringValue
+                //let startDate = formatter.date(from: startString)
+                //let endString = gEvent.end!.dateTime?.stringValue ?? gEvent.end!.date!.stringValue
+                //let endDate = formatter.date(from: endString)
+                let summaryString = gEvent.summary ?? ""
+                let locationString = gEvent.location ?? ""
+                let event: EventsModel = EventsModel(startDate: Date(), eventSummary: summaryString, endDate: Date(), location: locationString)
+                eventsArray.append(event)
             }
+            tableView.reloadData()
         } else {
             outputText = "No upcoming events found."
         }
@@ -122,20 +123,43 @@ class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
     }
 }
 
-extension HomeViewController: UITableViewDataSource
+extension HomeViewController: UITableViewDataSource, UITableViewDelegate
 {
+    func numberOfSections(in tableView: UITableView) -> Int
+    {
+        return 2
+    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 0
+        if section == 0  {
+            return 1
+        }
+        else{
+            return eventsArray.count
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
+    {
+        if indexPath.section == 0{
+            return 180.0
+        }else{
+            return 100.0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: "alarmCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "alarmCell", for: indexPath) as! AlarmTableViewCell
             return cell
         }else{
-            let cell = tableView.dequeueReusableCell(withIdentifier: "infoCell", for: indexPath)
+            let cell = tableView.dequeueReusableCell(withIdentifier: "infoCell", for: indexPath) as! InfoTableViewCell
+            let event = eventsArray[indexPath.row]
+            let dateFormatter = DateFormatter()
+            dateFormatter.setLocalizedDateFormatFromTemplate("hh:mm A")
+            cell.label.text = "\(dateFormatter.string(from: event.startDate)) to \(dateFormatter.string(from: event.endDate))"
+            cell.textView.text = event.eventSummary
             return cell
         }
     }
