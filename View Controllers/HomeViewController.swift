@@ -11,6 +11,7 @@ import GoogleSignIn
 import UIKit
 
 class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelegate {
+    
   
     @IBOutlet weak var tableView: UITableView!
 
@@ -29,7 +30,9 @@ class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
         GIDSignIn.sharedInstance().delegate = self
         GIDSignIn.sharedInstance().uiDelegate = self
         GIDSignIn.sharedInstance().scopes = scopes
-        GIDSignIn.sharedInstance().signInSilently()
+        GIDSignIn.sharedInstance().signIn()
+        //GIDSignIn.sharedInstance().signInSilently()
+        //GIDSignIn.sharedInstance().clientID = "<CLIENT_ID>"
         
         // Add the sign-in button.
         view.addSubview(signInButton)
@@ -37,7 +40,7 @@ class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
         // Add a UITextView to display output.
         output.frame = view.bounds
         output.isEditable = false
-        output.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 20, right: 0)
+        output.contentInset = UIEdgeInsets(top: 150, left: 0, bottom: 20, right: 0)
         output.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         output.isHidden = true
         view.addSubview(output);

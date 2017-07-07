@@ -23,6 +23,7 @@
 		FAE262541F0DC19A00CE3551 /* SmartSnoozeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE262531F0DC19A00CE3551 /* SmartSnoozeViewController.swift */; };
 		FAE262A01F0FD61900CE3551 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAE2629F1F0FD61900CE3551 /* GoogleService-Info.plist */; };
 		FAE262A21F0FDB4700CE3551 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE262A11F0FDB4700CE3551 /* AdSupport.framework */; };
+		FAE262A61F0FF15800CE3551 /* EventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE262A51F0FF15800CE3551 /* EventsModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +47,7 @@
 		FAE262531F0DC19A00CE3551 /* SmartSnoozeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SmartSnoozeViewController.swift; path = "View Controllers/SmartSnoozeViewController.swift"; sourceTree = "<group>"; };
 		FAE2629F1F0FD61900CE3551 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FAE262A11F0FDB4700CE3551 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		FAE262A51F0FF15800CE3551 /* EventsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsModel.swift; path = Models/EventsModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -156,6 +158,7 @@
 			isa = PBXGroup;
 			children = (
 				FAE262451F0D731E00CE3551 /* AlarmModel.swift */,
+				FAE262A51F0FF15800CE3551 /* EventsModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -296,6 +299,7 @@
 				FAE262421F0D4BE800CE3551 /* HomeViewController.swift in Sources */,
 				FAE262521F0DC04A00CE3551 /* AnnounceTimeViewController.swift in Sources */,
 				FAE262541F0DC19A00CE3551 /* SmartSnoozeViewController.swift in Sources */,
+				FAE262A61F0FF15800CE3551 /* EventsModel.swift in Sources */,
 				FAE262221F0D3F3300CE3551 /* AppDelegate.swift in Sources */,
 				FAE262401F0D4A7A00CE3551 /* InfoTableViewCell.swift in Sources */,
 				FAE262491F0D79A000CE3551 /* AlarmService.swift in Sources */,
