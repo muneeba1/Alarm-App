@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46457A15025F9AC651F6E8EE /* Pods_Alarm_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9886DC9C00836708258B4D0A /* Pods_Alarm_App.framework */; };
 		FAE262221F0D3F3300CE3551 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE262211F0D3F3300CE3551 /* AppDelegate.swift */; };
 		FAE262271F0D3F3300CE3551 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE262251F0D3F3300CE3551 /* Main.storyboard */; };
 		FAE262291F0D3F3300CE3551 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAE262281F0D3F3300CE3551 /* Assets.xcassets */; };
@@ -20,9 +21,14 @@
 		FAE2624E1F0DBD5800CE3551 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE2624D1F0DBD5800CE3551 /* CalendarViewController.swift */; };
 		FAE262521F0DC04A00CE3551 /* AnnounceTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE262511F0DC04A00CE3551 /* AnnounceTimeViewController.swift */; };
 		FAE262541F0DC19A00CE3551 /* SmartSnoozeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE262531F0DC19A00CE3551 /* SmartSnoozeViewController.swift */; };
+		FAE262A01F0FD61900CE3551 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FAE2629F1F0FD61900CE3551 /* GoogleService-Info.plist */; };
+		FAE262A21F0FDB4700CE3551 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE262A11F0FDB4700CE3551 /* AdSupport.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		90A82FF672F57B42EE95A2BB /* Pods-Alarm App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alarm App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Alarm App/Pods-Alarm App.debug.xcconfig"; sourceTree = "<group>"; };
+		9886DC9C00836708258B4D0A /* Pods_Alarm_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Alarm_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E48358237624904E0971BDF9 /* Pods-Alarm App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alarm App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Alarm App/Pods-Alarm App.release.xcconfig"; sourceTree = "<group>"; };
 		FAE2621E1F0D3F3300CE3551 /* Alarm App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Alarm App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE262211F0D3F3300CE3551 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAE262261F0D3F3300CE3551 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -38,6 +44,8 @@
 		FAE2624D1F0DBD5800CE3551 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarViewController.swift; path = "View Controllers/CalendarViewController.swift"; sourceTree = "<group>"; };
 		FAE262511F0DC04A00CE3551 /* AnnounceTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnnounceTimeViewController.swift; path = "View Controllers/AnnounceTimeViewController.swift"; sourceTree = "<group>"; };
 		FAE262531F0DC19A00CE3551 /* SmartSnoozeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SmartSnoozeViewController.swift; path = "View Controllers/SmartSnoozeViewController.swift"; sourceTree = "<group>"; };
+		FAE2629F1F0FD61900CE3551 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FAE262A11F0FDB4700CE3551 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,17 +53,40 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAE262A21F0FDB4700CE3551 /* AdSupport.framework in Frameworks */,
+				46457A15025F9AC651F6E8EE /* Pods_Alarm_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6B7BBD397567E82B63D6C257 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				90A82FF672F57B42EE95A2BB /* Pods-Alarm App.debug.xcconfig */,
+				E48358237624904E0971BDF9 /* Pods-Alarm App.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		AFF569E35FC50AD2784CC79C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FAE262A11F0FDB4700CE3551 /* AdSupport.framework */,
+				9886DC9C00836708258B4D0A /* Pods_Alarm_App.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FAE262151F0D3F3300CE3551 = {
 			isa = PBXGroup;
 			children = (
+				FAE2629F1F0FD61900CE3551 /* GoogleService-Info.plist */,
 				FAE262201F0D3F3300CE3551 /* Alarm App */,
 				FAE2621F1F0D3F3300CE3551 /* Products */,
+				6B7BBD397567E82B63D6C257 /* Pods */,
+				AFF569E35FC50AD2784CC79C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,9 +175,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FAE262301F0D3F3300CE3551 /* Build configuration list for PBXNativeTarget "Alarm App" */;
 			buildPhases = (
+				2E272C9E0F948E8C24241DA8 /* [CP] Check Pods Manifest.lock */,
 				FAE2621A1F0D3F3300CE3551 /* Sources */,
 				FAE2621B1F0D3F3300CE3551 /* Frameworks */,
 				FAE2621C1F0D3F3300CE3551 /* Resources */,
+				118BE3B3297742EBD8E60E2C /* [CP] Embed Pods Frameworks */,
+				FE93F92ADC886E8127451183 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -198,12 +232,61 @@
 			buildActionMask = 2147483647;
 			files = (
 				FAE2622C1F0D3F3300CE3551 /* LaunchScreen.storyboard in Resources */,
+				FAE262A01F0FD61900CE3551 /* GoogleService-Info.plist in Resources */,
 				FAE262291F0D3F3300CE3551 /* Assets.xcassets in Resources */,
 				FAE262271F0D3F3300CE3551 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		118BE3B3297742EBD8E60E2C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Alarm App/Pods-Alarm App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2E272C9E0F948E8C24241DA8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		FE93F92ADC886E8127451183 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Alarm App/Pods-Alarm App-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FAE2621A1F0D3F3300CE3551 /* Sources */ = {
@@ -340,6 +423,7 @@
 		};
 		FAE262311F0D3F3300CE3551 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90A82FF672F57B42EE95A2BB /* Pods-Alarm App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B8LC78N529;
@@ -353,6 +437,7 @@
 		};
 		FAE262321F0D3F3300CE3551 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E48358237624904E0971BDF9 /* Pods-Alarm App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = B8LC78N529;
