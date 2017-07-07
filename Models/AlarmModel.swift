@@ -9,61 +9,45 @@
 import Foundation
 import MediaPlayer
 
-class AlarmModel: NSObject {
-    
-    private static var _alarms: [AlarmModel]? {
-        didSet{
-            //sync userdefaults
-        }
-    }
-    
-    static var alarms: [AlarmModel]
-    {
-        guard let currentAlarms = _alarms else { fatalError("Error: Alarm does not exist")}
-        return currentAlarms
-    }
-    
+class AlarmModel: NSObject
+{
+    enum weekdays { case Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday }
+
     var date: Date = Date()
     var enabled: Bool = false
-    var snoozeEnabled: Bool = false
-    var repeatWeekdays: [Int] = []
-    var uuid: String = ""
-    var mediaID: String = ""
-    var mediaLabel: String = "bell"
+    var weekDay: weekdays
     var label: String = "Alarm"
     var onSnooze: Bool = false
     
-    init(date:Date, enabled:Bool, snoozeEnabled:Bool, repeatWeekdays:[Int], uuid:String, mediaID:String, mediaLabel:String, label:String, onSnooze: Bool){
+    init(date:Date, enabled:Bool, weekDay: weekdays, label:String)
+    {
         self.date = date
+        self.weekDay = weekDay
         self.enabled = enabled
-        self.snoozeEnabled = snoozeEnabled
-        self.repeatWeekdays = repeatWeekdays
-        self.uuid = uuid
-        self.mediaID = mediaID
-        self.mediaLabel = mediaLabel
+        self.label = label
+        self.onSnooze = false
+        super.init()
+    }
+    
+    init(date:Date, enabled:Bool, weekDay: weekdays, label:String, onSnooze: Bool)
+    {
+        self.date = date
+        self.weekDay = weekDay
+        self.enabled = enabled
         self.label = label
         self.onSnooze = onSnooze
+        super.init()
     }
 }
-extension AlarmModel {
-    var formattedTime: String {
+extension AlarmModel
+{
+    var formattedTime: String
+    {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "h:mm a"
         return dateFormatter.string(from: self.date)
     }
+    
+    
 }
-
-/*
-    init(_ dict: PropertyReflectable.RepresentationType){
-        date = dict["date"] as! Date
-        enabled = dict["enabled"] as! Bool
-        snoozeEnabled = dict["snoozeEnabled"] as! Bool
-        repeatWeekdays = dict["repeatWeekdays"] as! [Int]
-        uuid = dict["uuid"] as! String
-        mediaID = dict["mediaID"] as! String
-        mediaLabel = dict["mediaLabel"] as! String
-        label = dict["label"] as! String
-        onSnooze = dict["onSnooze"] as! Bool
-    }
-*/
 
