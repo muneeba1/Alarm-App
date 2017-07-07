@@ -2,21 +2,6 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-<<<<<<< HEAD
-	<key>NSCalendarsUsageDescription</key>
-	<string>test</string>
-	<key>NSCameraUsageDescription</key>
-	<string>test</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>test</string>
-	<key>NSCalendarsUsageDescription </key>
-	<string>ios</string>
-=======
-	<key>NSPhotoLibraryUsageDescription </key>
-	<string>$(PRODUCT_NAME)</string>
-	<key>NSCameraUsageDescription</key>
-	<string></string>
->>>>>>> testingCals
 	<key>CFBundleDevelopmentRegion</key>
 	<string>en</string>
 	<key>CFBundleExecutable</key>
