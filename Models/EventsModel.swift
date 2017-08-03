@@ -26,8 +26,6 @@ class EventsModel: NSObject{
         self.location = location
     }
     
-    
-    
     func displayEvents(){
         
 
