@@ -10,6 +10,7 @@
 		46457A15025F9AC651F6E8EE /* Pods_Alarm_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9886DC9C00836708258B4D0A /* Pods_Alarm_App.framework */; };
 		BAAED4F31F101A7A008E1D45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAAED4F21F101A7A008E1D45 /* GoogleService-Info.plist */; };
 		BAAED4F51F101ADC008E1D45 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAAED4F41F101ADC008E1D45 /* Info.plist */; };
+		FACD9B1A1F38BA2700DBED78 /* SpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD9B191F38BA2700DBED78 /* SpeechService.swift */; };
 		FAE262221F0D3F3300CE3551 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE262211F0D3F3300CE3551 /* AppDelegate.swift */; };
 		FAE262271F0D3F3300CE3551 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE262251F0D3F3300CE3551 /* Main.storyboard */; };
 		FAE262291F0D3F3300CE3551 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAE262281F0D3F3300CE3551 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		BAAED4F21F101A7A008E1D45 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BAAED4F41F101ADC008E1D45 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E48358237624904E0971BDF9 /* Pods-Alarm App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alarm App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Alarm App/Pods-Alarm App.release.xcconfig"; sourceTree = "<group>"; };
+		FACD9B191F38BA2700DBED78 /* SpeechService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeechService.swift; path = Service/SpeechService.swift; sourceTree = SOURCE_ROOT; };
 		FAE2621E1F0D3F3300CE3551 /* Alarm App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Alarm App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE262211F0D3F3300CE3551 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAE262261F0D3F3300CE3551 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -168,6 +170,7 @@
 			isa = PBXGroup;
 			children = (
 				FAE262481F0D79A000CE3551 /* AlarmService.swift */,
+				FACD9B191F38BA2700DBED78 /* SpeechService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				FAE2624E1F0DBD5800CE3551 /* CalendarViewController.swift in Sources */,
 				FAE262461F0D731E00CE3551 /* AlarmModel.swift in Sources */,
 				FAE2624C1F0DBB9D00CE3551 /* SettingsViewController.swift in Sources */,
+				FACD9B1A1F38BA2700DBED78 /* SpeechService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

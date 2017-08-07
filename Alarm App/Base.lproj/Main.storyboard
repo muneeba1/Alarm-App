@@ -283,6 +283,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uas-45-5Zd">
+                                <rect key="frame" x="182" y="130" width="177" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="177" id="yZ7-UV-SLk"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="RJj-na-Xb1" id="kxi-T6-oLc"/>
+                                    <outlet property="delegate" destination="RJj-na-Xb1" id="sDR-tj-EVR"/>
+                                </connections>
+                            </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Voice:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sIZ-UE-LSd">
                                 <rect key="frame" x="35" y="193" width="155" height="55"/>
                                 <constraints>
@@ -297,12 +307,10 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="206" id="y0E-hG-7Jd"/>
                                 </constraints>
-                            </pickerView>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uas-45-5Zd">
-                                <rect key="frame" x="182" y="130" width="177" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="177" id="yZ7-UV-SLk"/>
-                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="RJj-na-Xb1" id="zyg-2x-BWm"/>
+                                    <outlet property="delegate" destination="RJj-na-Xb1" id="Ey3-bM-J6h"/>
+                                </connections>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Turn on/off" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Aw-xl-yiu">
                                 <rect key="frame" x="35" y="256" width="132" height="64"/>
@@ -345,7 +353,24 @@
                             <constraint firstItem="6Aw-xl-yiu" firstAttribute="top" secondItem="0cE-mZ-G6p" secondAttribute="bottom" constant="8" symbolic="YES" id="yre-4b-0gv"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="BOt-Pz-LdL"/>
+                    <navigationItem key="navigationItem" id="BOt-Pz-LdL">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="xrH-2Y-Jxo">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="RJj-na-Xb1" id="qdQ-8e-OT3"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="iHh-ZO-hru">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="RJj-na-Xb1" id="R20-im-azB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="cancelButton" destination="xrH-2Y-Jxo" id="w7b-42-Pfb"/>
+                        <outlet property="languagePickerView" destination="uas-45-5Zd" id="O5M-Hg-cBb"/>
+                        <outlet property="saveButton" destination="iHh-ZO-hru" id="0uH-BY-VVi"/>
+                        <outlet property="voicePickerView" destination="0cE-mZ-G6p" id="cnx-EW-Nbl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X3e-fL-DFT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -439,7 +464,6 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="c1J-4s-4Qw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="barTintColor" red="0.2156862745" green="0.53333333329999999" blue="0.69803921570000005" alpha="1" colorSpace="calibratedRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -455,7 +479,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g9M-HG-5Eg" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uzM-QC-Gnw">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="uzM-QC-Gnw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -473,7 +497,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fuq-sJ-pfR" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="h2l-lf-C01">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="h2l-lf-C01">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -491,7 +515,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fHl-KY-rPu" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HP7-H2-zL2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="HP7-H2-zL2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -509,7 +533,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zDd-RF-BMe" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AXB-W0-r8L">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="AXB-W0-r8L">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
