@@ -24,7 +24,9 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="T7z-nO-hmf">
                                 <rect key="frame" x="0.0" y="64" width="375" height="603"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.22352941176470587" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="separatorColor" red="0.97647058823529409" green="0.792156862745098" blue="0.56862745098039214" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="sectionIndexBackgroundColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="alarmCell" rowHeight="119" id="NdA-HJ-sPn" customClass="AlarmTableViewCell" customModule="Alarm_App" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="119"/>
@@ -39,7 +41,7 @@
                                                         <constraint firstAttribute="height" constant="61" id="FHV-8c-4CI"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="40"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="0.95294117647058818" green="0.68627450980392157" blue="0.3529411764705882" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kDo-q1-P4J">
@@ -70,6 +72,7 @@
                                                 <constraint firstItem="l9t-xp-0zY" firstAttribute="top" secondItem="eoc-R8-bov" secondAttribute="bottom" constant="-7" id="xSF-DF-qnf"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <connections>
                                             <outlet property="onOffSwitch" destination="kDo-q1-P4J" id="h8x-Tc-T6g"/>
                                             <outlet property="timeLabel" destination="eoc-R8-bov" id="PeR-XR-o5q"/>
@@ -86,16 +89,17 @@
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your schedule for today:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2TN-fg-Zu2">
                                                     <rect key="frame" x="19" y="8" width="337" height="28"/>
                                                     <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="25"/>
-                                                    <nil key="textColor"/>
+                                                    <color key="textColor" red="0.95294117649999999" green="0.68627450980000004" blue="0.35294117650000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="center" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Ar-LD-sqC">
                                                     <rect key="frame" x="8" y="44" width="359" height="147"/>
-                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="backgroundColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
+                                            <color key="backgroundColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.22352941179999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <constraints>
                                                 <constraint firstItem="2TN-fg-Zu2" firstAttribute="leading" secondItem="hfJ-Fd-Ex7" secondAttribute="leadingMargin" constant="11" id="9yw-lg-dmu"/>
                                                 <constraint firstItem="8Ar-LD-sqC" firstAttribute="top" secondItem="2TN-fg-Zu2" secondAttribute="bottom" constant="8" id="GAx-e9-8WW"/>
@@ -118,9 +122,11 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xL6-IF-QMk">
-                                <rect key="frame" x="324" y="75" width="25" height="25"/>
+                                <rect key="frame" x="334" y="72" width="25" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" image="settings"/>
+                                <state key="normal" image="settings">
+                                    <color key="titleColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.63529411764705879" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                                 <connections>
                                     <segue destination="h2a-L8-v8B" kind="show" id="7zI-FP-Uez"/>
                                 </connections>
@@ -146,6 +152,7 @@
         <!--Settings View Controller-->
         <scene sceneID="dE0-xS-YCv">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Zzq-DC-36x" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="h2a-L8-v8B" customClass="SettingsViewController" customModule="Alarm_App" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tPG-8N-TUg"/>
@@ -159,9 +166,6 @@
                                 <rect key="frame" x="128" y="160" width="118" height="35"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
                                 <state key="normal" title="Calendar &gt;"/>
-                                <connections>
-                                    <segue destination="mOH-E9-3sq" kind="show" id="fbe-gq-NZw"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zqt-Nw-PPH">
                                 <rect key="frame" x="109" y="285" width="157" height="30"/>
@@ -170,9 +174,6 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
                                 <state key="normal" title="Smart Snooze &gt;"/>
-                                <connections>
-                                    <segue destination="qz2-4z-qpt" kind="show" id="vi9-ck-Wo0"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y8W-Om-1Nm">
                                 <rect key="frame" x="109" y="221" width="157" height="35"/>
@@ -207,53 +208,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="N8v-T0-cEN"/>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Zzq-DC-36x" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3682.4000000000001" y="36.431784107946029"/>
-        </scene>
-        <!--Calendar View Controller-->
-        <scene sceneID="DFr-hj-wm4">
-            <objects>
-                <viewController id="mOH-E9-3sq" customClass="CalendarViewController" customModule="Alarm_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="ss9-QG-9PF"/>
-                        <viewControllerLayoutGuide type="bottom" id="Nc1-Se-MPP"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="LIr-pC-daE">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Calendar" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfx-dg-zQL">
-                                <rect key="frame" x="101" y="76" width="172" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="CbF-r6-QeB"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select the days to turn your alarm off:" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jVn-VJ-ISX">
-                                <rect key="frame" x="17" y="129" width="343" height="142"/>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Nc1-Se-MPP" firstAttribute="top" secondItem="jVn-VJ-ISX" secondAttribute="bottom" constant="396" id="Emm-bd-8f6"/>
-                            <constraint firstItem="jVn-VJ-ISX" firstAttribute="leading" secondItem="LIr-pC-daE" secondAttribute="leadingMargin" constant="1" id="HXd-Vy-8AU"/>
-                            <constraint firstItem="jVn-VJ-ISX" firstAttribute="trailing" secondItem="LIr-pC-daE" secondAttribute="trailingMargin" constant="1" id="PZz-Bl-dtE"/>
-                            <constraint firstItem="jVn-VJ-ISX" firstAttribute="centerX" secondItem="Xfx-dg-zQL" secondAttribute="centerX" constant="1.5" id="XDW-ME-q3l"/>
-                            <constraint firstItem="jVn-VJ-ISX" firstAttribute="top" secondItem="ss9-QG-9PF" secondAttribute="bottom" constant="65" id="nRN-rt-sAF"/>
-                            <constraint firstItem="Xfx-dg-zQL" firstAttribute="top" secondItem="ss9-QG-9PF" secondAttribute="bottom" constant="12" id="x6y-Wl-zBm"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="PXO-CR-fyR"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="M8f-YL-3A3" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5429.6000000000004" y="36.431784107946029"/>
         </scene>
         <!--Announce Time View Controller-->
         <scene sceneID="r5M-Zf-wdL">
@@ -374,87 +330,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X3e-fL-DFT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7336.8000000000002" y="36.431784107946029"/>
-        </scene>
-        <!--Smart Snooze View Controller-->
-        <scene sceneID="eeo-oI-Tr7">
-            <objects>
-                <viewController id="qz2-4z-qpt" customClass="SmartSnoozeViewController" customModule="Alarm_App" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="9sg-uU-SNB"/>
-                        <viewControllerLayoutGuide type="bottom" id="4wd-5P-F2i"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="qKR-0q-0O3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Smart Snooze" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Px-eQ-m5p">
-                                <rect key="frame" x="36" y="72" width="302" height="58"/>
-                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="40"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Duration:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iVo-az-Rbe">
-                                <rect key="frame" x="25" y="153" width="155" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="155" id="Xl6-zs-LQ6"/>
-                                    <constraint firstAttribute="height" constant="55" id="rYO-6n-nXr"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Louder per snooze:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="roL-TA-ocz">
-                                <rect key="frame" x="25" y="216" width="230" height="55"/>
-                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="25"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qmP-28-zM8">
-                                <rect key="frame" x="172" y="153" width="177" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="177" id="ukW-ad-bbI"/>
-                                </constraints>
-                            </pickerView>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PTq-T3-hiZ">
-                                <rect key="frame" x="289" y="228" width="51" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="Fu3-J3-Wfd"/>
-                                    <constraint firstAttribute="width" constant="49" id="fb3-OV-WgV"/>
-                                </constraints>
-                            </switch>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Make the alarm sound louder per snooze" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSi-do-rrq">
-                                <rect key="frame" x="20" y="264" width="240" height="57"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="5Px-eQ-m5p" firstAttribute="centerX" secondItem="qKR-0q-0O3" secondAttribute="centerX" id="2Sg-H7-XTB"/>
-                            <constraint firstItem="5Px-eQ-m5p" firstAttribute="trailing" secondItem="PTq-T3-hiZ" secondAttribute="trailing" id="2ge-oK-gAJ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="qmP-28-zM8" secondAttribute="trailing" constant="10" id="3NK-X0-dXL"/>
-                            <constraint firstItem="iVo-az-Rbe" firstAttribute="leading" secondItem="qKR-0q-0O3" secondAttribute="leadingMargin" constant="9" id="3RG-DO-TAJ"/>
-                            <constraint firstItem="iVo-az-Rbe" firstAttribute="top" secondItem="5Px-eQ-m5p" secondAttribute="bottom" constant="23" id="653-wb-TdR"/>
-                            <constraint firstItem="iVo-az-Rbe" firstAttribute="top" secondItem="qmP-28-zM8" secondAttribute="top" id="8wX-uH-3uI"/>
-                            <constraint firstItem="4wd-5P-F2i" firstAttribute="top" secondItem="roL-TA-ocz" secondAttribute="bottom" constant="396" id="G9m-PN-cKk"/>
-                            <constraint firstItem="5Px-eQ-m5p" firstAttribute="top" secondItem="9sg-uU-SNB" secondAttribute="bottom" constant="8" symbolic="YES" id="PEE-fS-xAC"/>
-                            <constraint firstItem="5Px-eQ-m5p" firstAttribute="leading" secondItem="qKR-0q-0O3" secondAttribute="leadingMargin" constant="20" id="Q10-JG-f7D"/>
-                            <constraint firstItem="roL-TA-ocz" firstAttribute="top" secondItem="iVo-az-Rbe" secondAttribute="bottom" constant="8" symbolic="YES" id="VpI-uQ-El9"/>
-                            <constraint firstItem="PTq-T3-hiZ" firstAttribute="top" secondItem="qmP-28-zM8" secondAttribute="bottom" constant="20" id="VvV-xt-8W6"/>
-                            <constraint firstItem="PTq-T3-hiZ" firstAttribute="leading" secondItem="roL-TA-ocz" secondAttribute="trailing" constant="34" id="WhB-Mg-DqA"/>
-                            <constraint firstItem="iVo-az-Rbe" firstAttribute="leading" secondItem="roL-TA-ocz" secondAttribute="leading" id="ckn-6i-9ht"/>
-                            <constraint firstItem="roL-TA-ocz" firstAttribute="top" secondItem="qmP-28-zM8" secondAttribute="bottom" constant="8" symbolic="YES" id="f63-vZ-ume"/>
-                            <constraint firstItem="roL-TA-ocz" firstAttribute="centerY" secondItem="PTq-T3-hiZ" secondAttribute="centerY" id="v6z-A8-sVp"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="rqo-G2-76b"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Wef-9J-ED9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="9192.7999999999993" y="36.431784107946029"/>
+            <point key="canvasLocation" x="5510" y="37"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HCm-Gp-Dpk">
@@ -464,6 +340,7 @@
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="c1J-4s-4Qw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.12549019607843137" green="0.12549019607843137" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
@@ -477,9 +354,10 @@
         <!--Navigation Controller-->
         <scene sceneID="pfh-Jz-G2H">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gIQ-ma-EzC" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g9M-HG-5Eg" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="uzM-QC-Gnw">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="uzM-QC-Gnw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -488,34 +366,15 @@
                         <segue destination="h2a-L8-v8B" kind="relationship" relationship="rootViewController" id="qEE-GK-6PO"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gIQ-ma-EzC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2743.1999999999998" y="36.431784107946029"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="UaQ-Mp-W88">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fuq-sJ-pfR" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="h2l-lf-C01">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="mOH-E9-3sq" kind="relationship" relationship="rootViewController" id="Cwh-EN-Tj9"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Xdx-wg-Wf6" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4490.3999999999996" y="36.431784107946029"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="z2Q-2f-7bu">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fHl-KY-rPu" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="HP7-H2-zL2">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HP7-H2-zL2">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -526,25 +385,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QGA-Er-f7m" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="6255" y="36"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="CrR-Cr-EbB">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zDd-RF-BMe" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="AXB-W0-r8L">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="qz2-4z-qpt" kind="relationship" relationship="rootViewController" id="MCy-By-1Cn"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DtN-TP-CwB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="8143" y="36"/>
+            <point key="canvasLocation" x="4526" y="37"/>
         </scene>
     </scenes>
     <resources>
@@ -552,8 +393,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="7zI-FP-Uez"/>
-        <segue reference="vi9-ck-Wo0"/>
-        <segue reference="Cwh-EN-Tj9"/>
-        <segue reference="cu8-Dy-s4I"/>
+        <segue reference="tTZ-oI-Jqw"/>
     </inferredMetricsTieBreakers>
 </document>
