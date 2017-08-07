@@ -45,6 +45,9 @@ class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
         //GIDSignIn.sharedInstance().signInSilently()
         //GIDSignIn.sharedInstance().clientID = "<CLIENT_ID>"
         
+        //back button color
+        self.navigationController?.navigationBar.tintColor = UIColor.myOrangeColor()
+        
         // Add the sign-in button.
         view.addSubview(signInButton)
         
@@ -68,10 +71,16 @@ class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
         
         let dateFormatter = DateFormatter()
         dateFormatter.setLocalizedDateFormatFromTemplate("EEEE MMMMd")
-        self.title = dateFormatter.string(from: Date())
+       // self.title = dateFormatter.string(from: Date())
         let cal :Calendar = Calendar(identifier: .gregorian)
         let weekDay = cal.component(.weekday, from: Date())
         today = weekDay
+        
+        let label: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
+        label.textAlignment = .center
+        label.text = dateFormatter.string(from: Date())
+        label.textColor = UIColor.white
+        self.navigationItem.titleView = label
     }
     
     
@@ -131,7 +140,7 @@ class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
                 //let endDate = formatter.date(from: endString)
                 let summaryString = gEvent.summary ?? ""
                 let locationString = gEvent.location ?? ""
-                let event: EventsModel = EventsModel(startDate: Date(), eventSummary: summaryString, endDate: Date(), location: locationString)
+                let event: EventsModel = EventsModel(startDate: (gEvent.start?.dateTime?.date)!, eventSummary: summaryString, endDate: (gEvent.end?.dateTime?.date)!, location: locationString)
                 eventsArray.append(event)
             }
             tableView.reloadData()
@@ -161,13 +170,18 @@ class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
     
     func speakEvents()
     {
-        var stringToSpeak = "Good Morning. Today you have \(eventsArray.count) events. Here they are: "
-        for event in eventsArray
+        let ud = UserDefaults.standard
+        let speakIsOff: Bool = ud.object(forKey: "speakIsOff") as? Bool ?? false
+        if !speakIsOff
         {
-            stringToSpeak += " \(event.eventSummary),  then  "
+            var stringToSpeak = "Good Morning. Today you have \(eventsArray.count) events. Here they are: "
+            for event in eventsArray
+            {
+                stringToSpeak += " \(event.eventSummary),  then  "
+            }
+            stringToSpeak += " you're free! "
+            speechService.speakString(text: stringToSpeak)
         }
-        stringToSpeak += " you're free! "
-        speechService.speakString(text: stringToSpeak)
     }
 }
 
@@ -190,7 +204,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
         if indexPath.section == 0{
-            return 180.0
+            return 140.0
         }else{
             return 100.0
         }
@@ -205,10 +219,20 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate
             let cell = tableView.dequeueReusableCell(withIdentifier: "infoCell", for: indexPath) as! InfoTableViewCell
             let event = eventsArray[indexPath.row]
             let dateFormatter = DateFormatter()
-            dateFormatter.setLocalizedDateFormatFromTemplate("hh:mm A")
+            dateFormatter.setLocalizedDateFormatFromTemplate("h:mm a")
             cell.label.text = "\(dateFormatter.string(from: event.startDate)) to \(dateFormatter.string(from: event.endDate))"
             cell.textView.text = event.eventSummary
+            
             return cell
         }
     }
 }
+
+extension UIColor
+{
+    class func myOrangeColor() -> UIColor
+    {
+        return UIColor(red:0.60, green:0.49, blue:0.42, alpha:1.0)
+    }
+}
+

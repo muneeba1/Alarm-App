@@ -18,6 +18,8 @@ class AnnounceTimeViewController: UIViewController
     @IBOutlet weak var voicePickerView: UIPickerView!
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var saveButton: UIBarButtonItem!
+    @IBOutlet weak var switchButton: UISwitch!
+   
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem)
     {
         self.navigationController?.popViewController(animated: true)
@@ -27,8 +29,13 @@ class AnnounceTimeViewController: UIViewController
     {
         let ud = UserDefaults.standard
         ud.set(selectedVoiceLanguage, forKey: "language")
-        
+        ud.set(!switchButton.isOn, forKey: "speakIsOff")
         self.navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func switchButtonPressed(_ sender: UISwitch)
+    {
+        //switchButton.isOn = false
     }
     
     //variables
@@ -36,10 +43,8 @@ class AnnounceTimeViewController: UIViewController
     var selectedVoiceLanguage: String = UserDefaults.standard.object(forKey: "language") as? String ?? "en-gb"
     var selectedVoice: String = ""
     var languageDict: [String: String] = [:]
-    //var language: String = UserDefaults.standard.object(forKey: "language") as? String ?? "en-gb"
     var keyArray: [String] = []
     var voices: [String: [String]] = [:]
-    
     
     override func viewDidLoad()
     {
@@ -47,17 +52,26 @@ class AnnounceTimeViewController: UIViewController
         
         // print(AVSpeechSynthesisVoice.speechVoices())
         
-        prepareVoiceList()
+        if switchButton.isOn == true
+        {
+            prepareVoiceList()
+        }
+    }
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        self.loadSavedDefaults()
     }
     
     func prepareVoiceList()
     {
-        for voice in AVSpeechSynthesisVoice.speechVoices() {
+        for voice in AVSpeechSynthesisVoice.speechVoices()
+        {
             let voiceLanguageCode = (voice as AVSpeechSynthesisVoice).language
             
             let languageName = (Locale.current as NSLocale).displayName(forKey: NSLocale.Key.identifier, value: voiceLanguageCode)
             
-            print(languageName!)
+            //print(languageName!)
             if voices[voiceLanguageCode] != nil
             {
                 voices[voiceLanguageCode]?.append(voice.name)
@@ -74,6 +88,28 @@ class AnnounceTimeViewController: UIViewController
             arrVoiceLanguages.append(languageDict)
             
         }
+    }
+    
+    func loadSavedDefaults()
+    {
+        let ud = UserDefaults.standard
+        let speakIsOff: Bool = ud.object(forKey: "speakIsOff") as? Bool ?? false
+        switchButton.isOn = !speakIsOff
+        let languageCode: String = ud.object(forKey: "language") as? String ?? "en-gb"
+        let languageNm = (languageDict as NSDictionary).allKeys(for: languageCode).first as? String
+        var i = 0
+        for key in self.keyArray
+        {
+            print(key)
+            if key == languageNm
+            {
+                languagePickerView.selectRow(i, inComponent: 0, animated: true)
+            }
+            //check if key is equal to language
+            //if it is, then set the selected item in picker to that int (i)
+            i+=1
+        }
+        
     }
     
 }
