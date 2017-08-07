@@ -27,6 +27,7 @@ class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
     let scheduler = AlarmService()
     var alarms: [AlarmModel] = []
     var today: Int = 0
+    var displayedAlarm: AlarmModel?
 
     
     override func viewDidLoad()
@@ -74,7 +75,8 @@ class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
     {
         super.viewWillAppear(animated)
         alarms = AlarmModel.getAlarms()
-        print("test")
+        displayedAlarm = alarms[today]
+        print("today \(String(describing: displayedAlarm?.date)) label \(String(describing: displayedAlarm?.label))")
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!,
@@ -115,11 +117,13 @@ class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
         }
         
         var outputText = ""
-        if let events = response.items, !events.isEmpty {
+        if let events = response.items, !events.isEmpty
+        {
             let formatter = DateFormatter()
             formatter.locale = Locale.current
             formatter.setLocalizedDateFormatFromTemplate("yyyy-MM-ddTHH:mm:ss")
-            for gEvent in events {
+            for gEvent in events
+            {
                 //let startString = gEvent.start!.dateTime?.stringValue ?? gEvent.start!.date!.stringValue
                 //let startDate = formatter.date(from: startString)
                 //let endString = gEvent.end!.dateTime?.stringValue ?? gEvent.end!.date!.stringValue
@@ -130,7 +134,9 @@ class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
                 eventsArray.append(event)
             }
             tableView.reloadData()
-        } else {
+        }
+        else
+        {
             outputText = "No upcoming events found."
         }
         output.text = outputText
@@ -138,7 +144,8 @@ class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
     
     
     // Helper for showing an alert
-    func showAlert(title : String, message: String) {
+    func showAlert(title : String, message: String)
+    {
         let alert = UIAlertController(
             title: title,
             message: message,
@@ -162,29 +169,41 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        if section == 0  {
+        if section == 0
+        {
             return 1
         }
-        else{
+        else
+        {
             return eventsArray.count
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        if indexPath.section == 0{
+        if indexPath.section == 0
+        {
             return 180.0
-        }else{
+        }
+        else
+        {
             return 100.0
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        if indexPath.section == 0 {
+        if indexPath.section == 0
+        {
+            let formatter = DateFormatter()
+            formatter.setLocalizedDateFormatFromTemplate("hh:mm A")
             let cell = tableView.dequeueReusableCell(withIdentifier: "alarmCell", for: indexPath) as! AlarmTableViewCell
+            cell.timeLabel.text = formatter.string(from: displayedAlarm?.date ?? Date())
+            cell.titleField.text = displayedAlarm?.label ?? "no alarm"
             return cell
-        }else{
+        }
+        else
+        {
             let cell = tableView.dequeueReusableCell(withIdentifier: "infoCell", for: indexPath) as! InfoTableViewCell
             let event = eventsArray[indexPath.row]
             let dateFormatter = DateFormatter()
