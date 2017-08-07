@@ -10,6 +10,7 @@
 		46457A15025F9AC651F6E8EE /* Pods_Alarm_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9886DC9C00836708258B4D0A /* Pods_Alarm_App.framework */; };
 		BAAED4F31F101A7A008E1D45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAAED4F21F101A7A008E1D45 /* GoogleService-Info.plist */; };
 		BAAED4F51F101ADC008E1D45 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAAED4F41F101ADC008E1D45 /* Info.plist */; };
+		FACD9B1A1F38BA2700DBED78 /* SpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD9B191F38BA2700DBED78 /* SpeechService.swift */; };
 		FAE262221F0D3F3300CE3551 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE262211F0D3F3300CE3551 /* AppDelegate.swift */; };
 		FAE262271F0D3F3300CE3551 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE262251F0D3F3300CE3551 /* Main.storyboard */; };
 		FAE262291F0D3F3300CE3551 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAE262281F0D3F3300CE3551 /* Assets.xcassets */; };
@@ -20,9 +21,7 @@
 		FAE262461F0D731E00CE3551 /* AlarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE262451F0D731E00CE3551 /* AlarmModel.swift */; };
 		FAE262491F0D79A000CE3551 /* AlarmService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE262481F0D79A000CE3551 /* AlarmService.swift */; };
 		FAE2624C1F0DBB9D00CE3551 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE2624B1F0DBB9D00CE3551 /* SettingsViewController.swift */; };
-		FAE2624E1F0DBD5800CE3551 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE2624D1F0DBD5800CE3551 /* CalendarViewController.swift */; };
 		FAE262521F0DC04A00CE3551 /* AnnounceTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE262511F0DC04A00CE3551 /* AnnounceTimeViewController.swift */; };
-		FAE262541F0DC19A00CE3551 /* SmartSnoozeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE262531F0DC19A00CE3551 /* SmartSnoozeViewController.swift */; };
 		FAE262A21F0FDB4700CE3551 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAE262A11F0FDB4700CE3551 /* AdSupport.framework */; };
 		FAE262A61F0FF15800CE3551 /* EventsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE262A51F0FF15800CE3551 /* EventsModel.swift */; };
 /* End PBXBuildFile section */
@@ -33,6 +32,7 @@
 		BAAED4F21F101A7A008E1D45 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BAAED4F41F101ADC008E1D45 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E48358237624904E0971BDF9 /* Pods-Alarm App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alarm App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Alarm App/Pods-Alarm App.release.xcconfig"; sourceTree = "<group>"; };
+		FACD9B191F38BA2700DBED78 /* SpeechService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeechService.swift; path = Service/SpeechService.swift; sourceTree = SOURCE_ROOT; };
 		FAE2621E1F0D3F3300CE3551 /* Alarm App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Alarm App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE262211F0D3F3300CE3551 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAE262261F0D3F3300CE3551 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -44,9 +44,7 @@
 		FAE262451F0D731E00CE3551 /* AlarmModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlarmModel.swift; path = Models/AlarmModel.swift; sourceTree = SOURCE_ROOT; };
 		FAE262481F0D79A000CE3551 /* AlarmService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlarmService.swift; path = Service/AlarmService.swift; sourceTree = SOURCE_ROOT; };
 		FAE2624B1F0DBB9D00CE3551 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = "View Controllers/SettingsViewController.swift"; sourceTree = "<group>"; };
-		FAE2624D1F0DBD5800CE3551 /* CalendarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CalendarViewController.swift; path = "View Controllers/CalendarViewController.swift"; sourceTree = "<group>"; };
 		FAE262511F0DC04A00CE3551 /* AnnounceTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AnnounceTimeViewController.swift; path = "View Controllers/AnnounceTimeViewController.swift"; sourceTree = "<group>"; };
-		FAE262531F0DC19A00CE3551 /* SmartSnoozeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SmartSnoozeViewController.swift; path = "View Controllers/SmartSnoozeViewController.swift"; sourceTree = "<group>"; };
 		FAE262A11F0FDB4700CE3551 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		FAE262A51F0FF15800CE3551 /* EventsModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EventsModel.swift; path = Models/EventsModel.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
@@ -121,9 +119,7 @@
 			children = (
 				FAE262411F0D4BE800CE3551 /* HomeViewController.swift */,
 				FAE2624B1F0DBB9D00CE3551 /* SettingsViewController.swift */,
-				FAE2624D1F0DBD5800CE3551 /* CalendarViewController.swift */,
 				FAE262511F0DC04A00CE3551 /* AnnounceTimeViewController.swift */,
-				FAE262531F0DC19A00CE3551 /* SmartSnoozeViewController.swift */,
 			);
 			name = Controllers;
 			path = ..;
@@ -168,6 +164,7 @@
 			isa = PBXGroup;
 			children = (
 				FAE262481F0D79A000CE3551 /* AlarmService.swift */,
+				FACD9B191F38BA2700DBED78 /* SpeechService.swift */,
 			);
 			name = Service;
 			sourceTree = "<group>";
@@ -207,7 +204,7 @@
 				TargetAttributes = {
 					FAE2621D1F0D3F3300CE3551 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = ESE5F95GWA;
+						DevelopmentTeam = B8LC78N529;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -300,15 +297,14 @@
 			files = (
 				FAE262421F0D4BE800CE3551 /* HomeViewController.swift in Sources */,
 				FAE262521F0DC04A00CE3551 /* AnnounceTimeViewController.swift in Sources */,
-				FAE262541F0DC19A00CE3551 /* SmartSnoozeViewController.swift in Sources */,
 				FAE262A61F0FF15800CE3551 /* EventsModel.swift in Sources */,
 				FAE262221F0D3F3300CE3551 /* AppDelegate.swift in Sources */,
 				FAE262401F0D4A7A00CE3551 /* InfoTableViewCell.swift in Sources */,
 				FAE262491F0D79A000CE3551 /* AlarmService.swift in Sources */,
 				FAE2623D1F0D4A4B00CE3551 /* AlarmTableViewCell.swift in Sources */,
-				FAE2624E1F0DBD5800CE3551 /* CalendarViewController.swift in Sources */,
 				FAE262461F0D731E00CE3551 /* AlarmModel.swift in Sources */,
 				FAE2624C1F0DBB9D00CE3551 /* SettingsViewController.swift in Sources */,
+				FACD9B1A1F38BA2700DBED78 /* SpeechService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -432,7 +428,7 @@
 			baseConfigurationReference = 90A82FF672F57B42EE95A2BB /* Pods-Alarm App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ESE5F95GWA;
+				DEVELOPMENT_TEAM = B8LC78N529;
 				INFOPLIST_FILE = "Alarm App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.makeschool.Alarm-App";
@@ -446,7 +442,7 @@
 			baseConfigurationReference = E48358237624904E0971BDF9 /* Pods-Alarm App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = ESE5F95GWA;
+				DEVELOPMENT_TEAM = B8LC78N529;
 				INFOPLIST_FILE = "Alarm App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.makeschool.Alarm-App";
