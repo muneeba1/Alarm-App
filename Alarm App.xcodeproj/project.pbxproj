@@ -11,6 +11,7 @@
 		BAAED4F31F101A7A008E1D45 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAAED4F21F101A7A008E1D45 /* GoogleService-Info.plist */; };
 		BAAED4F51F101ADC008E1D45 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BAAED4F41F101ADC008E1D45 /* Info.plist */; };
 		FACD9B1A1F38BA2700DBED78 /* SpeechService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD9B191F38BA2700DBED78 /* SpeechService.swift */; };
+		FACD9B1C1F3918F900DBED78 /* EditTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACD9B1B1F3918F900DBED78 /* EditTimeViewController.swift */; };
 		FAE262221F0D3F3300CE3551 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE262211F0D3F3300CE3551 /* AppDelegate.swift */; };
 		FAE262271F0D3F3300CE3551 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAE262251F0D3F3300CE3551 /* Main.storyboard */; };
 		FAE262291F0D3F3300CE3551 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAE262281F0D3F3300CE3551 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		BAAED4F41F101ADC008E1D45 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E48358237624904E0971BDF9 /* Pods-Alarm App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Alarm App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Alarm App/Pods-Alarm App.release.xcconfig"; sourceTree = "<group>"; };
 		FACD9B191F38BA2700DBED78 /* SpeechService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SpeechService.swift; path = Service/SpeechService.swift; sourceTree = SOURCE_ROOT; };
+		FACD9B1B1F3918F900DBED78 /* EditTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditTimeViewController.swift; path = "View Controllers/EditTimeViewController.swift"; sourceTree = "<group>"; };
 		FAE2621E1F0D3F3300CE3551 /* Alarm App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Alarm App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAE262211F0D3F3300CE3551 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAE262261F0D3F3300CE3551 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -120,6 +122,7 @@
 				FAE262411F0D4BE800CE3551 /* HomeViewController.swift */,
 				FAE2624B1F0DBB9D00CE3551 /* SettingsViewController.swift */,
 				FAE262511F0DC04A00CE3551 /* AnnounceTimeViewController.swift */,
+				FACD9B1B1F3918F900DBED78 /* EditTimeViewController.swift */,
 			);
 			name = Controllers;
 			path = ..;
@@ -301,6 +304,7 @@
 				FAE262221F0D3F3300CE3551 /* AppDelegate.swift in Sources */,
 				FAE262401F0D4A7A00CE3551 /* InfoTableViewCell.swift in Sources */,
 				FAE262491F0D79A000CE3551 /* AlarmService.swift in Sources */,
+				FACD9B1C1F3918F900DBED78 /* EditTimeViewController.swift in Sources */,
 				FAE2623D1F0D4A4B00CE3551 /* AlarmTableViewCell.swift in Sources */,
 				FAE262461F0D731E00CE3551 /* AlarmModel.swift in Sources */,
 				FAE2624C1F0DBB9D00CE3551 /* SettingsViewController.swift in Sources */,

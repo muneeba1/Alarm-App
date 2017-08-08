@@ -65,7 +65,10 @@ class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
                 print("already authorized")
                 //let date = Date().addingTimeInterval(TimeInterval(exactly: 60)!)
                 //let alarm = AlarmModel(date: date, enabled: true, weekDay: .Thursday, label: "Testing 1")
-                // self.scheduler.setupNotificationsForAlarm(alarm: alarm)
+                //self.scheduler.setupNotificationsForAlarm(alarm: alarm)
+                
+                //dispalying ud
+                //saving it
             }
         }
         
@@ -79,7 +82,7 @@ class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
         let label: UILabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
         label.textAlignment = .center
         label.text = dateFormatter.string(from: Date())
-        label.textColor = UIColor.white
+        label.textColor = UIColor.myPurpleColor()
         self.navigationItem.titleView = label
     }
     
@@ -129,7 +132,8 @@ class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
         }
         
         var outputText = ""
-        if let events = response.items, !events.isEmpty {
+        if let events = response.items, !events.isEmpty
+        {
             let formatter = DateFormatter()
             formatter.locale = Locale.current
             formatter.setLocalizedDateFormatFromTemplate("yyyy-MM-ddTHH:mm:ss")
@@ -145,7 +149,8 @@ class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
             }
             tableView.reloadData()
             speakEvents()
-        } else {
+        }
+        else {
             outputText = "No upcoming events found."
         }
         output.text = outputText
@@ -153,7 +158,8 @@ class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
     
     
     // Helper for showing an alert
-    func showAlert(title : String, message: String) {
+    func showAlert(title : String, message: String)
+    {
         let alert = UIAlertController(
             title: title,
             message: message,
@@ -193,29 +199,35 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        if section == 0  {
+        if section == 0
+        {
             return 1
         }
-        else{
+        else
+        {
             return eventsArray.count
         }
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat
     {
-        if indexPath.section == 0{
+        if indexPath.section == 0
+        {
             return 140.0
-        }else{
+        }else
+        {
             return 100.0
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        if indexPath.section == 0 {
+        if indexPath.section == 0
+        {
             let cell = tableView.dequeueReusableCell(withIdentifier: "alarmCell", for: indexPath) as! AlarmTableViewCell
             return cell
-        }else{
+        }
+        else{
             let cell = tableView.dequeueReusableCell(withIdentifier: "infoCell", for: indexPath) as! InfoTableViewCell
             let event = eventsArray[indexPath.row]
             let dateFormatter = DateFormatter()
@@ -233,6 +245,11 @@ extension UIColor
     class func myOrangeColor() -> UIColor
     {
         return UIColor(red:0.60, green:0.49, blue:0.42, alpha:1.0)
+    }
+    
+    class func myPurpleColor() -> UIColor
+    {
+        return UIColor(red:0.17, green:0.17, blue:0.22, alpha:1.0)
     }
 }
 

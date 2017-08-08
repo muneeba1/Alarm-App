@@ -42,6 +42,7 @@ class AlarmModel: NSObject
     
     func save()
     {
+        //saves alarm default
         let dateFormatter = DateFormatter()
         dateFormatter.setLocalizedDateFormatFromTemplate("hh:mm a")
         ud.set(dateFormatter.string(from: date), forKey:"\(weekDay)alarmTime")
