@@ -16,7 +16,7 @@ class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
 {
     
     @IBOutlet weak var tableView: UITableView!
-   
+    
     let speechService = SpeechService()
     var eventsArray: [EventsModel] = []
     
@@ -32,8 +32,6 @@ class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
     var alarms: [AlarmModel] = []
     var today: Int = 0
     var displayedAlarm: AlarmModel?
-
-
     
     override func viewDidLoad()
     {
@@ -76,7 +74,7 @@ class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
         
         let dateFormatter = DateFormatter()
         dateFormatter.setLocalizedDateFormatFromTemplate("EEEE MMMMd")
-       // self.title = dateFormatter.string(from: Date())
+        // self.title = dateFormatter.string(from: Date())
         let cal :Calendar = Calendar(identifier: .gregorian)
         let weekDay = cal.component(.weekday, from: Date())
         today = weekDay
@@ -194,11 +192,27 @@ class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
             speechService.speakString(text: stringToSpeak)
         }
     }
-    
+    //when hit save
     func createEvents ()
     {
         let ud = UserDefaults.standard
         let eventName: String = ud.object(forKey: "eventTitle") as! String
+        let startTime: String = ud.object(forKey: "startTime") as! String
+        let endTime: String = ud.object(forKey: "endTime") as! String
+        
+        for event in eventsArray
+        {
+            
+            let dateformatter = DateFormatter()
+            dateformatter.dateStyle = DateFormatter.Style.short
+            dateformatter.timeStyle = DateFormatter.Style.short
+//            let now = dateformatter.string(from:   as Date)
+//            
+//            starttime string to date
+//            event.startDate = startTime
+//            event.endDate = endTime
+//            event.eventSummary = eventName
+        }
         
     }
 }

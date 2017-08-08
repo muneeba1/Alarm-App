@@ -25,10 +25,14 @@ class CreateEventViewController: UIViewController
     {
         let ud = UserDefaults.standard
         ud.set(eventName, forKey: "eventTitle")
+        ud.set(startTime, forKey: "startTime")
+        ud.set(endTime, forKey: "endTime")
         self.navigationController?.popViewController(animated: true)
     }
-    
+      
     var eventName: String = ""
+    var startTime: String = ""
+    var endTime: String = ""
     
     override func viewDidLoad()
     {
@@ -81,7 +85,7 @@ class CreateEventViewController: UIViewController
         
         formatter.dateStyle = DateFormatter.Style.medium
         
-        formatter.timeStyle = DateFormatter.Style.medium
+        formatter.timeStyle = DateFormatter.Style.short
         
         startTimeTextField.text = formatter.string(from: NSDate() as Date)
         
@@ -103,6 +107,11 @@ class CreateEventViewController: UIViewController
         startTimeTextField.text = formatter.string(from: sender.date)
         
         endTimeTextField.text = formatter.string(from: sender.date)
+        
+        startTime = startTimeTextField.text!
+        endTime =  startTimeTextField.text!
+        
+        //startTime = formatter.timeStyle = DateFormatter.Style.short
     }
     
     func donePressed(sender: UIBarButtonItem) {
