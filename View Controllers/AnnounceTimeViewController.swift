@@ -50,12 +50,11 @@ class AnnounceTimeViewController: UIViewController
     {
         super.viewDidLoad()
         
-        // print(AVSpeechSynthesisVoice.speechVoices())
-        
         if switchButton.isOn == true
         {
             prepareVoiceList()
         }
+        
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -105,8 +104,6 @@ class AnnounceTimeViewController: UIViewController
             {
                 languagePickerView.selectRow(i, inComponent: 0, animated: true)
             }
-            //check if key is equal to language
-            //if it is, then set the selected item in picker to that int (i)
             i+=1
         }
         

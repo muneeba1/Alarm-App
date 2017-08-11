@@ -63,6 +63,10 @@ class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
             else
             {
                 print("already authorized")
+                let ud = UserDefaults.standard
+                let hour = ud.object(forKey: "hour")
+                let mins = ud.object(forKey: "minutes")
+                let period = ud.object(forKey: "period")
                 //let date = Date().addingTimeInterval(TimeInterval(exactly: 60)!)
                 //let alarm = AlarmModel(date: date, enabled: true, weekDay: .Thursday, label: "Testing 1")
                 //self.scheduler.setupNotificationsForAlarm(alarm: alarm)
@@ -191,29 +195,6 @@ class HomeViewController: UIViewController, GIDSignInDelegate, GIDSignInUIDelega
             stringToSpeak += " you're free! "
             speechService.speakString(text: stringToSpeak)
         }
-    }
-    //when hit save
-    func createEvents ()
-    {
-        let ud = UserDefaults.standard
-        let eventName: String = ud.object(forKey: "eventTitle") as! String
-        let startTime: String = ud.object(forKey: "startTime") as! String
-        let endTime: String = ud.object(forKey: "endTime") as! String
-        
-        for event in eventsArray
-        {
-            
-            let dateformatter = DateFormatter()
-            dateformatter.dateStyle = DateFormatter.Style.short
-            dateformatter.timeStyle = DateFormatter.Style.short
-//            let now = dateformatter.string(from:   as Date)
-//            
-//            starttime string to date
-//            event.startDate = startTime
-//            event.endDate = endTime
-//            event.eventSummary = eventName
-        }
-        
     }
 }
 

@@ -12,24 +12,11 @@ import UIKit
 class CreateEventViewController: UIViewController
 {
     
-    
     @IBOutlet weak var endTimeTextField: UITextField!
     @IBOutlet weak var startTimeTextField: UITextField!
     @IBOutlet weak var titleTextField: UITextField!
-    @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem)
-    {
-        self.navigationController?.popViewController(animated: true)
-    }
     
-    @IBAction func saveButtonPressed(_ sender: UIBarButtonItem)
-    {
-        let ud = UserDefaults.standard
-        ud.set(eventName, forKey: "eventTitle")
-        ud.set(startTime, forKey: "startTime")
-        ud.set(endTime, forKey: "endTime")
-        self.navigationController?.popViewController(animated: true)
-    }
-      
+    var eventsArray: [EventsModel] = []
     var eventName: String = ""
     var startTime: String = ""
     var endTime: String = ""
@@ -37,7 +24,12 @@ class CreateEventViewController: UIViewController
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        eventName = titleTextField.text!
+        
+        for event in eventsArray
+        {
+            print("start: \(event.startDate)")
+            print("end: \(event.endDate)")
+        }
         
         let datePicker = UIDatePicker()
         
@@ -76,11 +68,45 @@ class CreateEventViewController: UIViewController
         
         startTimeTextField.inputAccessoryView = toolbar
         endTimeTextField.inputAccessoryView = toolbar
-
+        
     }
     
-    func todayPressed(sender: UIBarButtonItem) {
-        
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?)
+    {
+        if let identifier = segue.identifier {
+            if identifier == "cancel" {
+                print("Cancel button tapped")
+            } else if identifier == "save" {
+                print("Save button tapped")
+                
+                eventName = titleTextField.text!
+                startTime = startTimeTextField.text!
+                endTime = endTimeTextField.text!
+                
+                for event in eventsArray
+                {
+                    let dateString = startTime
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "EEE, dd MMM yyyy hh:mm"
+                    dateFormatter.locale = Locale.init(identifier: "en_GB")
+                    
+                    let dateObj = dateFormatter.date(from: dateString)
+                    
+                    dateFormatter.dateFormat = "MM-dd-yyyy"
+                    print("Dateobj: \(dateFormatter.string(from: dateObj!))")
+                    
+                    event.startDate = dateObj!
+                    //event.endDate = endTime
+                    event.eventSummary = eventName
+                    
+                    print("startTime: \(event.startDate), endtime: \(event.endDate), eventName: \(event.eventSummary)")
+                }
+            }
+        }
+    }
+    
+    func todayPressed(sender: UIBarButtonItem)
+    {
         let formatter = DateFormatter()
         
         formatter.dateStyle = DateFormatter.Style.medium
@@ -96,8 +122,8 @@ class CreateEventViewController: UIViewController
         endTimeTextField.resignFirstResponder()
     }
     
-    func datePickerValueChanged(sender: UIDatePicker) {
-        
+    func datePickerValueChanged(sender: UIDatePicker)
+    {
         let formatter = DateFormatter()
         
         formatter.dateStyle = DateFormatter.Style.medium
@@ -114,10 +140,42 @@ class CreateEventViewController: UIViewController
         //startTime = formatter.timeStyle = DateFormatter.Style.short
     }
     
-    func donePressed(sender: UIBarButtonItem) {
-        
+    func donePressed(sender: UIBarButtonItem)
+    {
         startTimeTextField.resignFirstResponder()
         endTimeTextField.resignFirstResponder()
     }
+    
+    //    func createEvents ()
+    //    {
+    //        //        let ud = UserDefaults.standard
+    //        //        let eventName: String = ud.object(forKey: "eventTitle") as! String
+    //        //        let startTime: String = ud.object(forKey: "startTime") as! String
+    //        //        let endTime: String = ud.object(forKey: "endTime") as! String
+    //        //
+    //        for event in eventsArray
+    //        {
+    //
+    //            let dateString = startTime
+    //            let dateFormatter = DateFormatter()
+    //            dateFormatter.dateFormat = "EEE, dd MMM yyyy hh:mm:ss +zzzz"
+    //            dateFormatter.locale = Locale.init(identifier: "en_GB")
+    //            let dateObj = dateFormatter.date(from: dateString)
+    //
+    //           // eventName = titleTextField.text!
+    //
+    //            dateFormatter.dateFormat = "MM-dd-yyyy"
+    //            print("Dateobj: \(dateFormatter.string(from: dateObj!))")
+    //
+    //            //starttime string to date
+    //            event.startDate = dateObj!
+    //            print(event.startDate)
+    //            //event.endDate = endTime
+    //            event.eventSummary = eventName
+    //
+    //            print("startTime: \(event.startDate), event Name: \(event.eventSummary)")
+    //        }
+    //
+    //    }
 }
 

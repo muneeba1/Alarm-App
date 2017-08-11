@@ -14,19 +14,30 @@ class EditTimeViewController: UIViewController{
     @IBOutlet weak var cancelButton: UIBarButtonItem!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     @IBOutlet weak var timePickerView: UIPickerView!
+   
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem)
     {
         self.navigationController?.popViewController(animated: true)
     }
+    
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem)
     {
+        let ud = UserDefaults.standard
+        ud.set(selectedHour, forKey: "hour")
+        ud.set(selectedMins, forKey: "minutes")
+        ud.set(selectedPeriod, forKey: "period")
+        
+        print("\(self.selectedHour):\(self.selectedMins)\(self.selectedPeriod)")
         self.navigationController?.popViewController(animated: true)
     }
-    
+  
     var hourArray: [String] = ["1","2","3","4","5","6","7","8","9","10","11","12"]
-    var minArray: [String] = ["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15"]
+    var minArray: [String] = ["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23","24","25","26","27","28","29","30","31","32","33","34","35","36","37","38","39","40","41","42","43","44","45","46","47","48","49","50","51","52","53","54","55","56","57","58","59"]
     var periodArray: [String] = ["AM", "PM"]
-
+    
+    var selectedHour: String = "7"
+    var selectedMins: String = "00"
+    var selectedPeriod: String = "AM"
     
     override func viewDidLoad()
     {
@@ -61,16 +72,18 @@ extension EditTimeViewController: UIPickerViewDelegate, UIPickerViewDataSource
     {
         if component == 0
         {
+            selectedHour = hourArray[row]
             return hourArray[row]
         }
         else if component == 1
         {
+            selectedMins = minArray[row]
             return minArray[row]
         }else
         {
+            selectedPeriod = periodArray[row]
             return periodArray[row]
         }
-        
     }
     
     //styling picker data
@@ -95,4 +108,5 @@ extension EditTimeViewController: UIPickerViewDelegate, UIPickerViewDataSource
             return myTitle
         }
     }
+
 }
